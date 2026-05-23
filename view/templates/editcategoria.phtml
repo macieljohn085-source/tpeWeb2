@@ -1,0 +1,26 @@
+<?php require './view/templates/header.phtml' ?>
+
+<div class="container">
+
+    <h1>Editar categoría</h1>
+
+    <form action="<?= BASE_URL ?>updateCategoria/<?= $categoria->id_tipo ?>"
+          method="POST">
+
+        <input type="text"
+               name="nombre"
+               value="<?= $categoria->nombre ?>">
+
+        <input type="text"
+               name="imagen"
+               value="<?= $categoria->imagen ?>">
+
+        <button type="submit">
+            Guardar
+        </button>
+
+    </form>
+
+</div>
+
+<?php require './view/templates/footer.phtml' ?>

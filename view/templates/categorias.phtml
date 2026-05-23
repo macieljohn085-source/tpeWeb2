@@ -1,0 +1,62 @@
+<?php require './view/templates/header.phtml' ?>
+
+<div class="container">
+
+    <h1>Categorías</h1>
+
+    <?php foreach($categorias as $categoria) : ?>
+
+        <div class="card">
+
+            <h2>
+                <a href="<?= BASE_URL ?>categoria/<?= $categoria->id_tipo ?>">
+                    <?= $categoria->nombre ?>
+                </a>
+            </h2>
+
+           <img src="<?= $categoria->imagen ?>">
+
+            <?php if(isset($_SESSION['USER_ID'])) : ?>
+
+                <br><br>
+
+                <a href="<?= BASE_URL ?>editarCategoria/<?= $categoria->id_tipo ?>">
+                    Editar
+                </a>
+
+                <a href="<?= BASE_URL ?>eliminarCategoria/<?= $categoria->id_tipo ?>">
+                    Eliminar
+                </a>
+
+            <?php endif ?>
+
+        </div>
+
+    <?php endforeach ?>
+
+    <?php if(isset($_SESSION['USER_ID'])) : ?>
+
+        <h2>Agregar categoría</h2>
+
+        <form action="<?= BASE_URL ?>agregarCategoria"
+              method="POST">
+
+            <input type="text"
+                   name="nombre"
+                   placeholder="Nombre">
+
+            <input type="text"
+                   name="imagen"
+                   placeholder="URL imagen">
+
+            <button type="submit">
+                Agregar
+            </button>
+
+        </form>
+
+    <?php endif ?>
+
+</div>
+
+<?php require './view/templates/footer.phtml' ?>

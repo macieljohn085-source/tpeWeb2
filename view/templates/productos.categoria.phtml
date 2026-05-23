@@ -1,0 +1,28 @@
+<?php require './view/templates/header.phtml' ?>
+
+<div class="container">
+
+    <h1>Productos de la categoría</h1>
+
+    <?php foreach($productos as $producto) : ?>
+
+        <div class="card">
+
+            <h2><?= $producto->nombre ?></h2>
+
+            <p><?= $producto->descripcion ?></p>
+
+            <p>$<?= $producto->precio ?></p>
+
+            <strong>
+                Categoría:
+                <?= $producto->categoria ?>
+            </strong>
+
+        </div>
+
+    <?php endforeach ?>
+
+</div>
+
+<?php require './view/templates/footer.phtml' ?>

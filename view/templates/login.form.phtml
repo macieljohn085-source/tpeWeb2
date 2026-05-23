@@ -1,0 +1,26 @@
+<?php require './view/templates/header.phtml' ?>
+
+<div class="container">
+
+    <h1>Iniciar Sesión</h1>
+
+    <form action="<?= BASE_URL ?>auth"
+          method="POST">
+
+        <input type="text"
+               name="username"
+               placeholder="Usuario">
+
+        <input type="password"
+               name="password"
+               placeholder="Contraseña">
+
+        <button type="submit">
+            Login
+        </button>
+
+    </form>
+
+</div>
+
+<?php require './view/templates/footer.phtml' ?>
