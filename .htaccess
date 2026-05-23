@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteBase /TP.Web2/
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.+)$ router.php?action=$1 [QSA,L]
