@@ -6,7 +6,7 @@ class UsersModel {
    private $db;
 
    public function __construct() {
-      // 1. abre conexión con DB
+   
       $this->db = new PDO(
          'mysql:host=' . DB_HOST .
          ';dbname=' . DB_NAME .
@@ -20,6 +20,7 @@ class UsersModel {
         ('SELECT * FROM usuarios WHERE usuario = ?');
 
         $query->execute([$username]);
+
         return $query->fetch(PDO::FETCH_OBJ);
    }
 

@@ -1,0 +1,11 @@
+<?php require './view/templates/header.phtml'; ?>
+
+<h1><?= htmlspecialchars($producto->nombre ?? 'Producto') ?></h1>
+
+<p><strong>Descripción:</strong> <?= htmlspecialchars($producto->descripcion ?? '') ?></p>
+<p><strong>Precio:</strong> $<?= $producto->precio ?? '0' ?></p>
+
+<br>
+<a href="<?= BASE_URL ?>productos">← Volver a productos</a>
+
+<?php require './view/templates/footer.phtml'; ?>

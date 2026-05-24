@@ -1,0 +1,57 @@
+<?php require './view/templates/header.phtml'; ?>
+
+<h1>Administrar productos</h1>
+
+<form action="<?= BASE_URL ?>agregarProducto" method="POST">
+
+    <input type="text"
+           name="nombre"
+           placeholder="Nombre">
+
+    <input type="text"
+           name="descripcion"
+           placeholder="Descripción">
+
+    <input type="number"
+           name="precio"
+           placeholder="Precio">
+
+    <select name="id_tipo">
+
+        <option value="">
+            Seleccione categoría
+        </option>
+
+        <option value="1">Cafés</option>
+        <option value="2">Tortas</option>
+        <option value="3">Bebidas frías</option>
+
+    </select>
+
+    <button type="submit">
+        Agregar
+    </button>
+
+</form>
+
+<hr>
+
+<?php foreach($productos as $producto): ?>
+
+<div class="card">
+
+    <h3><?= $producto->nombre ?></h3>
+
+    <a href="<?= BASE_URL ?>editarProducto/<?= $producto->id_producto ?>">
+        Editar
+    </a>
+
+    <a href="<?= BASE_URL ?>eliminarProducto/<?= $producto->id_producto ?>">
+        Eliminar
+    </a>
+
+</div>
+
+<?php endforeach; ?>
+
+<?php require './view/templates/footer.phtml'; ?>

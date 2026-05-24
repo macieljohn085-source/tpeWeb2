@@ -42,8 +42,8 @@ CREATE TABLE `productos_menu` (
 INSERT INTO `productos_menu` (`id_producto`, `nombre`, `descripcion`, `precio`, `id_tipo`) VALUES
 (1, 'Café Latte', 'Café con leche espumada', 2500, 1),
 (2, 'Cheesecake', 'Torta de queso', 4200, 2),
-(3, 'Licuado de frutilla', 'Frutilla natural', 3000, 3),
-(4, '0', 'admin', NULL, NULL);
+(3, 'Licuado de frutilla', 'Frutilla natural', 3000, 3);
+
 
 -- --------------------------------------------------------
 
@@ -53,7 +53,7 @@ INSERT INTO `productos_menu` (`id_producto`, `nombre`, `descripcion`, `precio`, 
 
 CREATE TABLE `tipos_productos` (
   `id_tipo` int(11) NOT NULL,
-  `nombre` varchar(100) NOT NULL
+  `nombre` varchar(100) NOT NULL,
   `imagen` varchar(255) DEFAULT NULL
   
   
@@ -77,7 +77,7 @@ INSERT INTO `tipos_productos` (`id_tipo`, `nombre`, `imagen` ) VALUES
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
   `usuario` varchar(100) DEFAULT NULL,
-  `password` varchar(100) DEFAULT NULL
+  `password` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
